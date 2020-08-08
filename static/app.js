@@ -1,4 +1,4 @@
-d3.json("../data/samples.json").then(function(data)
+d3.json("data/samples.json").then(function(data)
 
 {console.log(data)
 
@@ -58,7 +58,7 @@ var selectDropdown = d3.select("#selDataset");
 
 
 function addOptions() {
-    d3.json("../data/samples.json").then(function(data) {
+    d3.json("data/samples.json").then(function(data) {
 
         data.names.forEach((name, i) => {
             var appendOption = selectDropdown.append("option").text(name).attr('value', i);
@@ -73,7 +73,7 @@ d3.selectAll("#selDataset").on("change", updatePlotly);
 function updatePlotly() {
   var selectDropdown = d3.select("#selDataset");
   var dataset = selectDropdown.property("value");
-  d3.json("../data/samples.json").then(function(data){
+  d3.json("data/samples.json").then(function(data){
 
     for (var i = 0; i < 153; i++) {
     
